@@ -26,6 +26,7 @@ pub(crate) struct ConnectionHandleRaw(NonNull<sqlite3>);
 // <https://www.sqlite.org/c3ref/c_config_covering_index_scan.html#sqliteconfigmultithread>
 
 unsafe impl Send for ConnectionHandle {}
+unsafe impl Sync for ConnectionHandle {}
 
 // SAFETY: this type does nothing but provide access to the DB handle pointer.
 unsafe impl Send for ConnectionHandleRaw {}
