@@ -211,14 +211,14 @@ pub(super) fn explain(
                     _ => {}
                 }
             }
-
+/*
             OP_NULL_ROW => {
                 // all registers that map to cursor X are potentially nullable
                 for register in &r_cursor[&p1] {
                     n.insert(*register, true);
                 }
             }
-
+*/
             OP_AGG_STEP => {
                 let p4 = from_utf8(p4).map_err(Error::protocol)?;
 
